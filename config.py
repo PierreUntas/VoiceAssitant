@@ -4,7 +4,7 @@ import os
 
 load_dotenv()
 
-WORD_TO_CALL = "michel"
+WORD_TO_CALL = "yoda"
 PERPLEXITY_API_KEY = os.getenv("PERPLEXITY_API_KEY")
 PERPLEXITY_MODEL = "sonar-pro"
 

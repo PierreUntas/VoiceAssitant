@@ -1,4 +1,8 @@
 openai
 speechrecognition
+pyaudio
 aiohttp
 deebot-client
+python-dotenv
+meteofrance-api
+gTTS
