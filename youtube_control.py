@@ -27,8 +27,15 @@ def play_youtube_music(query):
 
     # Lance la lecture audio avec mpv (sans pub, sans reprise, sans fenêtre)
     mpv_process = subprocess.Popen([
-        "mpv", "--no-video", "--no-resume-playback", "--force-window=no", video_url
-    ])
+        "mpv", 
+        "--no-video",           # Pas de vidéo
+        "--no-resume-playback", # Ne pas reprendre
+        "--ytdl-format=bestaudio/best",  # Meilleur flux audio disponible
+        "--force-window=no",    # Pas de fenêtre
+        "--really-quiet",       # Mode silencieux
+        "--script-opts=ytdl_hook-ytdl_path=/home/spacewolf/VoiceAssitant/venv/bin/yt-dlp",  # Chemin vers yt-dlp
+        video_url
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return True
 
 def stop_youtube_music():
